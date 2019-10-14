@@ -1,0 +1,14 @@
+D:\PymesAng\Datos\bin\Debug\Datos.dll.config
+D:\PymesAng\Datos\bin\Debug\Datos.dll
+D:\PymesAng\Datos\bin\Debug\Datos.pdb
+D:\PymesAng\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\PymesAng\Datos\obj\Debug\Datos.dll
+D:\PymesAng\Datos\obj\Debug\Datos.pdb
+D:\PymesAng\Datos\bin\Debug\EntityFramework.dll
+D:\PymesAng\Datos\bin\Debug\EntityFramework.SqlServer.dll
+D:\PymesAng\Datos\bin\Debug\EntityFramework.xml
+D:\PymesAng\Datos\bin\Debug\EntityFramework.SqlServer.xml
+D:\PymesAng\Datos\bin\Debug\Newtonsoft.Json.dll
+D:\PymesAng\Datos\bin\Debug\Newtonsoft.Json.xml
+D:\PymesAng\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+D:\PymesAng\Datos\obj\Debug\Datos.csproj.CopyComplete

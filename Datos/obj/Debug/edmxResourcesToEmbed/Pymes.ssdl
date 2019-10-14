@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PymesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Articulos">
+    <Key>
+      <PropertyRef Name="IdArticulo" />
+    </Key>
+    <Property Name="IdArticulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
+    <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CodigoDeBarra" Type="nchar" MaxLength="13" />
+    <Property Name="IdArticuloFamilia" Type="int" />
+    <Property Name="Stock" Type="int" />
+    <Property Name="FechaAlta" Type="date" />
+    <Property Name="Activo" Type="bit" />
+  </EntityType>
+  <EntityType Name="ArticulosFamilias">
+    <Key>
+      <PropertyRef Name="IdArticuloFamilia" />
+    </Key>
+    <Property Name="IdArticuloFamilia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_Articulos_ArticulosFamilias">
+    <End Role="ArticulosFamilias" Type="Self.ArticulosFamilias" Multiplicity="0..1" />
+    <End Role="Articulos" Type="Self.Articulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArticulosFamilias">
+        <PropertyRef Name="IdArticuloFamilia" />
+      </Principal>
+      <Dependent Role="Articulos">
+        <PropertyRef Name="IdArticuloFamilia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PymesModelStoreContainer">
+    <EntitySet Name="Articulos" EntityType="Self.Articulos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ArticulosFamilias" EntityType="Self.ArticulosFamilias" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Articulos_ArticulosFamilias" Association="Self.FK_Articulos_ArticulosFamilias">
+      <End Role="ArticulosFamilias" EntitySet="ArticulosFamilias" />
+      <End Role="Articulos" EntitySet="Articulos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
